@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using DungeonDesigner.Grid;
 
@@ -20,8 +21,15 @@ namespace DungeonDesigner.Sidebar
         private void ExportFloor(object sender, EventArgs e)
         {
             var exportString = FloorGrid.Instance.Export();
-            Debug.Write(exportString);
-            Clipboard.SetText(exportString);
+            var sfd = new SaveFileDialog();
+            sfd.Title = @"Save To Text File";
+            sfd.Filter = "Text Files | *.txt";
+            var result = sfd.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                File.WriteAllText(sfd.FileName, exportString);
+            }
         }
     }
 }

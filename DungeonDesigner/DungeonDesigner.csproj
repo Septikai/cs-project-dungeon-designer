@@ -56,8 +56,10 @@
         <Compile Include="Grid\FloorGrid.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Sidebar\ClearButton.cs" />
+        <Compile Include="Sidebar\CopyButton.cs" />
         <Compile Include="Sidebar\ExportButton.cs" />
         <Compile Include="Sidebar\ItemType.cs" />
+        <Compile Include="Sidebar\QuitButton.cs" />
         <Compile Include="Sidebar\SideBar.cs" />
         <Compile Include="Sidebar\SideBarItem.cs" />
         <EmbeddedResource Include="DungeonDesignerForm.resx">

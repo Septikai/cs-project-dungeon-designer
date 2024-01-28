@@ -43,8 +43,10 @@ namespace DungeonDesigner.Sidebar
             {
                 this.Controls.Add(item);
             }
+            this.Controls.Add(CopyButton.Instance);
             this.Controls.Add(ExportButton.Instance);
             this.Controls.Add(ClearButton.Instance);
+            this.Controls.Add(QuitButton.Instance);
             SetComponents();
         }
 
@@ -67,10 +69,14 @@ namespace DungeonDesigner.Sidebar
                 }
             }
 
+            CopyButton.Instance.Size = new Size(this.Width / 3, this.Width / 3 / 3);
+            CopyButton.Instance.Location = new Point(this.Width / 9, this.Width / 3 / 3 / 2);
             ExportButton.Instance.Size = new Size(this.Width / 3, this.Width / 3 / 3);
-            ExportButton.Instance.Location = new Point(this.Width / 3, this.Width / 3 / 3 / 2);
+            ExportButton.Instance.Location = new Point(this.Width * 5 / 9, this.Width / 3 / 3 / 2);
             ClearButton.Instance.Size = new Size(this.Width / 3, this.Width / 3 / 3);
-            ClearButton.Instance.Location = new Point(this.Width / 3, this.Height - ClearButton.Instance.Height - this.Width / 3 / 3 / 2);
+            ClearButton.Instance.Location = new Point(this.Width / 9, this.Height - ClearButton.Instance.Height - this.Width / 3 / 3 / 2);
+            QuitButton.Instance.Size = new Size(this.Width / 3, this.Width / 3 / 3);
+            QuitButton.Instance.Location = new Point(this.Width * 5 / 9, this.Height - ClearButton.Instance.Height - this.Width / 3 / 3 / 2);
         }
         
         public void ResizeComponent()
